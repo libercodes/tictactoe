@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    background-color: royalblue;
+    font-family: 'Roboto Condensed', sans-serif;
+    outline: none;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#board{
+    display: flex;
+    height: 600px;
+    width: 600px;
+    background-color: azure;
+    flex-wrap: wrap;
+}
+.cell{
+    background-color: azure;
+    border: solid 1px gray;
+    height: calc(99%/3);
+    width: calc(99%/3);
+
+}
+.cell:hover{
+    background-color: aquamarine;
+}
+
+.p1{
+    /* background-color: orange; */
+    background: url('/svg/cross.svg');
+}
+
+.p2{
+    /* background-color: pink; */
+    background: url('/svg/circle.svg');
+}
+
+#promptWinner{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 50%;
+    position: fixed;
+    background-color:whitesmoke;
+    color: black;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#promptWinner button{
+    width: 30%;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10%;
+
+}
+#promptWinner button:hover{
+    background: lightskyblue;
+    cursor: pointer;
+    
+}
+#promptWinner h1{
+    width: 100%;
+    padding: 5% 0;
+
+}
+
+.backdrop{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    
+    
+}
