@@ -19,13 +19,7 @@ class Game {
         game.numberOfClicks = 0;
     }
     ChangePlayer(){
-        if (this.player===1) {
-
-            this.player=2;
-        } else {
-
-            this.player=1;
-        };
+        this.player === 1? this.player = 2 : this.player = 1;
     }
     CheckStatus(){
         if (board.cellList.length>0) {
