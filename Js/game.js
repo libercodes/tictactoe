@@ -184,32 +184,17 @@ class Game {
         }
     }
     SetWinner(){
-        if (this.CheckStatus()==='Player 1') {
-            console.log('Player 1 WON');
-            this.results = 'Player 1 WON';
-            this.ended = true;
-            this.ShowWinner();
-        } else if(this.CheckStatus()=='Player 2') {
-            console.log('Player 2 WON');
-            this.results = 'Player 2 WON';
+        if (this.CheckStatus()){
+            this.results = this.CheckStatus() + ' WINS';
             this.ended = true;
             this.ShowWinner();
         }
-        else if(this.numberOfClicks==9){
-            console.log('Draw');
+        else if (this.numberOfClicks==9) {
             this.results = 'Draw!';
             this.ended = true;
             this.ShowWinner();
         }
-        else{
-            console.log('There is no winner yet');
-        }
-
-        if (this.ended) {
-            board.cellList.forEach(cell => {
-                cell.cellChecked =true;
-            });
-        }
+        this.ended ? board.cellList.forEach(cell =>  cell.cellChecked = true ) : null;
     }
     ShowWinner(){
         let backdrop = document.createElement('div');
